@@ -6,15 +6,15 @@ func QuadB(x, y int) {
 	if x <= 0 || y <= 0 {
 		return
 	}
-	for row := 0; row < y; row++ {
-		for col := 0; col < x; col++ {
-			if (row == 0 && col == 0) || (row == y-1 && col == x-1) {
+	for row := 1; row <= y; row++ {
+		for col := 1; col <= x; col++ {
+			if (row == 1 && col == 1) || (row == y && col == x) {
 				fmt.Print("/")
-			} else if (row == 0 && col == x-1) || (row == y-1 && col == 0) {
+			} else if (row == 1 && col == x) || (row == y && col == 1) {
 				fmt.Print("\\")
-			} else if row == 0 || row == y-1 {
+			} else if row == 1 || row == y {
 				fmt.Print("*")
-			} else if col == 0 || col == x-1 {
+			} else if col == 1 || col == x {
 				fmt.Print("*")
 			} else {
 				fmt.Print(" ")
